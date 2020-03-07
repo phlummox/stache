@@ -145,8 +145,7 @@ spec = describe "renderMustache" $ do
                        , ("middle", [Partial "inner"  (Just $ mkPos 1)])
                        , ("outer",  [Partial "middle" (Just $ mkPos 1)])
                        ]
-      in renderMustache template Null `shouldBe`
-            "x"
+      in renderMustache template Null `shouldBe` "x"
   context "when using dotted keys inside a section" $
     it "it should be equivalent to access via one more section" $
       r [ Section (key "things")
